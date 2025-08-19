@@ -4,7 +4,7 @@ import Layer9 from "@/../public/images/Layer9.png";
 import portalImage from "@/../public/images/portal-bg.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperClass } from "swiper";
-
+import { dataCollectionEntry } from "@/content/loginContent";
 import "swiper/css";
 
 const NewsletterForm = () => {
@@ -33,24 +33,32 @@ const NewsletterForm = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        className="w-full h-[200px]"
+        className="w-full h-[300px]"
         speed={0}>
-        <SwiperSlide>
-          <div>
-            <p className="text-white">
-              جلسه بررسی ارزیابی فصلی با حضور مسئولین و کارشناسان
+        <SwiperSlide dir="rtl">
+          <div className="flex flex-col justify-center items-start h-full px-1 ">
+            <p className="text-white text-right font-bold pb-5">
+              جمع آوری و ورود اطلاعات
+            </p>
+            <p className="text-white text-justify border-r-2 pr-5 border-white ">
+              {dataCollectionEntry}
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center items-center h-full">
-            <Image
-              src={portalImage}
-              width={224}
-              height={185}
-              className="object-cover ml-3"
-              alt="Background"
-            />
+          <div className="flex flex-col justify-center items-center h-full">
+            <p className="text-white text-right font-bold px-1 pb-5 pr-3">
+              جلسه بررسی ارزیابی فصلی با حضور مسئولین مناطق و کارشناسان
+            </p>
+            <div className="border-r-2 pr-5 border-white">
+              <Image
+                src={portalImage}
+                width={200}
+                height={185}
+                className="object-cover ml-3"
+                alt="Background"
+              />
+            </div>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -58,12 +66,12 @@ const NewsletterForm = () => {
       <div className="flex justify-between w-full text-white">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
-          className="px-4 py-2 rounded">
+          className="px-4 py-2 rounded cursor-pointer">
           قبلی
         </button>
         <button
           onClick={() => swiperRef.current?.slideNext()}
-          className="px-4 py-2 rounded">
+          className="px-4 py-2 rounded cursor-pointer">
           بعدی
         </button>
       </div>
