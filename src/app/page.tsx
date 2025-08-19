@@ -1,5 +1,5 @@
 "use client";
-import LoginForm from "@/componets/LoginForm";
+import FormManager from "@/componets/FormManager";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import rtlPlugin from "@mui/stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
@@ -22,7 +22,7 @@ export default function Home() {
     <CacheProvider value={cacheRtl}>
       <ThemeProvider theme={theme}>
         <div className="bg-oceanblue h-screen grid place-items-center">
-          <LoginForm />
+          <FormManager />
         </div>
       </ThemeProvider>
     </CacheProvider>

@@ -1,11 +1,17 @@
 import React, { useRef } from "react";
 import Image from "next/image";
+// image
 import Layer9 from "@/../public/images/Layer9.png";
 import portalImage from "@/../public/images/portal-bg.png";
+// swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperClass } from "swiper";
-import { dataCollectionEntry } from "@/content/loginContent";
 import "swiper/css";
+// contents
+import {
+  dataCollectionEntry,
+  quarterlyReviewMeeting,
+} from "@/contents/loginContent";
 
 const NewsletterForm = () => {
   const swiperRef = useRef<SwiperClass>(null);
@@ -48,7 +54,7 @@ const NewsletterForm = () => {
         <SwiperSlide>
           <div className="flex flex-col justify-center items-center h-full">
             <p className="text-white text-right font-bold px-1 pb-5 pr-3">
-              جلسه بررسی ارزیابی فصلی با حضور مسئولین مناطق و کارشناسان
+              {quarterlyReviewMeeting}
             </p>
             <div className="border-r-2 pr-5 border-white">
               <Image
